@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Third party
+    # 'corsheaders',
     'rest_framework',
     'drf_yasg',
     'rest_framework.authtoken',
     'dj_rest_auth',
+    'nested_admin',
     
     #myapps
     'users',
@@ -122,6 +124,8 @@ REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'users.serializers.CustomTokenSerializer',    
 }
 REST_FRAMEWORK = {
-
-'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',]    
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 }

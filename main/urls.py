@@ -33,5 +33,6 @@ urlpatterns = [
     #myapps
     path("users/", include('users.urls')),
     path("api/", include('quiz.urls')),
+    path('nested_admin/', include('nested_admin.urls')),
 ]
 
